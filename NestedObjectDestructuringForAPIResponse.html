@@ -1,0 +1,22 @@
+<script>
+  const user = {
+    id: 123,
+    profile: {
+      name: "John Doe",
+      address: {
+        city: "Los Angeles",
+        zipcode: "90001",
+      },
+    },
+  };
+
+  const { id, profile } = user;
+  const { name } = profile || {};
+  const { city, zipcode } = profile?.address || {};
+  const cityInfo = city || "Information not available";
+  const zipcodeInfo = zipcode || "Information not available";
+
+  const info = `User ${name} (ID: ${id}) lives in ${cityInfo} (ZIP: ${zipcodeInfo})`;
+
+  console.log(info);
+</script>
